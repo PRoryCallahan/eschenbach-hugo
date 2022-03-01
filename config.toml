@@ -1,6 +1,5 @@
 baseURL = "http://patrickrcallahan.com/dePoetisChristianis"
 relativeURLs = true
-uglyURLs = true
 languageCode = "en-us"
 title = "Eschenbach's De Poetis Christianis Sacris"
 
