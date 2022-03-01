@@ -6,4 +6,5 @@ draft: false
 
 [Print-optimized version of Latin Text](DePoetisChristianis.pdf)
 
-[TEI-XML](/static/xml/DePoetisChristianis.xml)
+To be added:
+[TEI-XML]()
