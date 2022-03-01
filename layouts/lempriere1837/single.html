@@ -1,0 +1,38 @@
+{{ define "main" }}
+
+<span style="text-align: center">
+<nav>
+  {{ if .NextPage }}
+  <a class="link-reverse" href="{{ .NextPage.Permalink }}?ref=footer">« Previous Chapter</a>
+  {{ end }}
+
+<a href="{{ relURL "/lempriere1837" }}">Return Full Text</a>
+
+  {{ if .PrevPage }}
+  <a class="link-reverse" href="{{ .PrevPage.Permalink }}?ref=footer">Next Chapter »</a>
+  {{ end }}
+</nav>
+
+</span>
+
+<h4>{{.Title}}</h4>
+<p>
+{{.Content}}
+</p>
+
+<span style="text-align: center">
+<nav>
+  {{ if .NextPage }}
+  <a class="link-reverse" href="{{ .NextPage.Permalink }}?ref=footer">« Previous Chapter</a>
+  {{ end }}
+
+<a href="{{ relURL "/lempriere1837" }}">Return Full Text</a>
+
+  {{ if .PrevPage }}
+  <a class="link-reverse" href="{{ .PrevPage.Permalink }}?ref=footer">Next Chapter »</a>
+  {{ end }}
+</nav>
+
+</span>
+
+{{ end }}

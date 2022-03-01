@@ -1,0 +1,9 @@
+baseURL = "http://patrickrcallahan.com/dePoetisChristianis"
+languageCode = "en-us"
+title = "Eschenbach's De Poetis Christianis Sacris"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  poet = "poets"
+  century = "centuries"

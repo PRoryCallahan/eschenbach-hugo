@@ -1,0 +1,57 @@
+{{ define "main" }}
+
+{{.Content}}
+
+<span style="text-align: center;">
+  <nav>
+    <a href="{{ relURL "/lempriere1837/prooemium" }}">View Text by Chapter</a>
+  </nav>
+  <h5>-or-</h5>
+<h3>Jump to Section:</h3>
+<p>{{ range where .Pages "Params.categories" "Prooemium" }} <a href="#{{.Title}}">Prooemium</a>{{ end }}</p>
+
+  <h5>SECTIO 1. –– De Poëtis Christianis Sacris iisque Graecis.</h5>
+  <p>CHAPTER: {{ range where .Pages "Params.categories" "Greek" }}
+  <a href="#{{.Title}}">{{.Title}}</a>
+  {{ end }}</p>
+
+  <h5>SECTIO 2. –– De Poëtis Christianis Sacris iisque Latinis.</h5>
+  <p>CHAPTER: {{ range where .Pages "Params.categories" "Latin" }}
+  <a href="#{{.Title}}">{{.Title}}</a>
+  {{ end }}</p>
+
+  <h3>Jump to Poet:</h3>
+  <p>POET:
+    {{ $taxo := "poets" }}
+    <ul class="{{ $taxo }}">
+        {{ with ($.Site.GetPage (printf "/%s" $taxo)) }}
+            {{ range .Pages }}
+                <a href="#{{ .Title }}">{{ .Title}}</a> |
+            {{ end }}
+        {{ end }}
+    </ul>
+</p>
+
+</span>
+
+<hr>
+
+{{ range .Pages.ByWeight }}
+
+<div class="row">
+  <div class="col1">
+      <h4 class="sticky" id="{{ .Params.poets }}" style="margin: 0px;">{{.Title}}</h4>
+  </div>
+  <div class="col2" id="{{.Title}}">
+       {{.Content}}
+  </div>
+</div>
+{{ end }}
+
+<nav style="position: fixed; bottom: 0px; right: 0px;">
+<a href="#">
+^</a>
+</nav>
+
+
+{{ end }}

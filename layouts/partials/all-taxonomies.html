@@ -1,0 +1,26 @@
+<section>
+    <ul id="all-taxonomies">
+        {{ range $taxonomy_term, $taxonomy := .Site.Taxonomies }}
+            {{ with $.Site.GetPage (printf "/%s" $taxonomy_term) }}
+            <div class="row">
+                <li><h2 style="margin: 0px;">{{ $taxonomy_term }}</h2>
+                    <ul>
+                        {{ range $key, $value := $taxonomy }}
+                            <li><h3 style="margin: 0px;">{{ $key }}</h3></li>
+                            <ul>
+                                {{ range $value.Pages }}
+                                <div class="col2">
+                                    <li hugo-nav="{{ .RelPermalink}}">
+                                        <a href="{{ .Permalink}}">{{ .LinkTitle }}</a>
+                                    </li>
+                                      </div>
+                                {{ end }}
+                            </ul>
+                        {{ end }}
+                    </ul>
+                </li>
+            </div>
+            {{ end }}
+        {{ end }}
+    </ul>
+</section>
